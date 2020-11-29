@@ -1,0 +1,51 @@
+query All_Posts {
+    getAllPosts {
+        id
+        title
+        content
+        featuredImage
+        createdAt
+        updatedAt
+    }
+}
+
+query Post_By_Id($id: ID!) {
+    getPostById(id: $id) {
+        id
+        title
+        content
+        featuredImage
+        createdAt
+        updatedAt
+    }
+}
+
+mutation Create_New_Post($PostInput: PostInput!) {
+    createNewPost(newpost: $PostInput) {
+        id
+        title
+        content
+        featuredImage
+        createdAt
+        updatedAt
+    }
+}
+
+mutation Edit_Post($id: ID!, $PostInput: PostInput!) {
+    updatePostById(updatedPost: $PostInput, id: $id) {
+        id
+        title
+        content
+        featuredImage
+        createdAt
+        updatedAt
+    }
+}
+
+mutation Delete_A_Post($id: ID!) {
+    deletePostById(id: $id) {
+        id
+        message
+        success
+    }
+}
